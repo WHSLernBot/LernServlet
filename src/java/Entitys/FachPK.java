@@ -1,33 +1,31 @@
 package Entitys;
 
-import static Entitys.Teilnahme_.id;
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.ManyToOne;
 
 /**
  *
  * @author Seve
  */
-@Entity
-@IdClass(FachPK.class)
-public class Fach implements Serializable {
-
-    @Id
-    @ManyToOne
+public class FachPK implements Serializable {
+    
     private Long uni;
     
-    @Id
     private String kuerzel;
 
+    public FachPK(Long uni, String kuerzel) {
+        this.uni = uni;
+        this.kuerzel = kuerzel;
+    }
+
+    public FachPK() {
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.uni);
-        hash = 17 * hash + Objects.hashCode(this.kuerzel);
+        hash = 59 * hash + Objects.hashCode(this.uni);
+        hash = 59 * hash + Objects.hashCode(this.kuerzel);
         return hash;
     }
 
@@ -42,7 +40,7 @@ public class Fach implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Fach other = (Fach) obj;
+        final FachPK other = (FachPK) obj;
         if (!Objects.equals(this.kuerzel, other.kuerzel)) {
             return false;
         }
@@ -51,14 +49,6 @@ public class Fach implements Serializable {
         }
         return true;
     }
-
-
-    
-    
-
-    @Override
-    public String toString() {
-        return "Entitys.Fach[ id=" + id + " ]";
-    }
+ 
     
 }

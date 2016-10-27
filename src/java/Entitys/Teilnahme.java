@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Entitys;
 
 import java.io.Serializable;
@@ -11,16 +16,12 @@ import javax.persistence.Id;
  * @author Seve
  */
 @Entity
-public class LernStatus implements Serializable {
+public class Teilnahme implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    private String Fach;
-    
-    private Boolean aktiv;
 
     public Long getId() {
         return id;
@@ -40,10 +41,10 @@ public class LernStatus implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof LernStatus)) {
+        if (!(object instanceof Teilnahme)) {
             return false;
         }
-        LernStatus other = (LernStatus) object;
+        Teilnahme other = (Teilnahme) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -52,7 +53,7 @@ public class LernStatus implements Serializable {
 
     @Override
     public String toString() {
-        return "Entitys.LernStatus[ id=" + id + " ]";
+        return "Entitys.Teilnahme[ id=" + id + " ]";
     }
     
 }

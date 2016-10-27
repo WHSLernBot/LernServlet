@@ -7,6 +7,14 @@
     <class>Entitys.Klausur</class>
     <class>Entitys.Aufgabe</class>
     <class>Entitys.LernStatus</class>
+    <class>Entitys.Thema</class>
+    <class>Entitys.BeAufgabe</class>
+    <class>Entitys.Teilnahme</class>
+    <class>Entitys.Token</class>
+    <class>Entitys.Antwort</class>
+    <class>Entitys.Uni</class>
+    <class>Entitys.Benutzer</class>
+    <class>Entitys.Plattform</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/BotData"/>

@@ -1,27 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Entitys;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author Seve
  */
 @Entity
-public class User implements Serializable {
+public class Uni implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    private String name;
+    
+    @OneToMany
+    private Collection<Benutzer> benutzer;
+    
+    @OneToMany
+    private Collection<Fach> faecher;
 
     public Long getId() {
         return id;
@@ -41,10 +46,10 @@ public class User implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof User)) {
+        if (!(object instanceof Uni)) {
             return false;
         }
-        User other = (User) object;
+        Uni other = (Uni) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -53,7 +58,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "Entitys.User[ id=" + id + " ]";
+        return "Entitys.Uni[ id=" + id + " ]";
     }
     
 }
